@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
     <div class="container">
-      <div class="options-box">
-        <h1>Find 5 best location</h1>
-        <div>
- <!--         <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-Penthouse" type="button" value="Show Penthouse"> -->
-          <div data-bind="foreach: obsLocations">
-              <div id="show-Splash" type="button" 
-              data-bind="text: title, click: $root.openWindow" ></div>
-          </div>
-          
-            <!--
-            <input id="show-Union" type="button" value="Show Union">
-            <input id="show-Village" type="button" value="Show Village">
-            <input id="show-TriBeCa" type="button" value="Show TriBeCa"> -->
+        <div class="options-box">
+            <h1>Find 5 best location</h1>
+            <div>
+                <div data-bind="foreach: obsLocations">
+                    <div id="show-Splash" type="button" data-bind="text: title, click: $root.openWindow"></div>
+                </div>
 
-
+            </div>
         </div>
-      </div>
-      <div id="map"></div>
+        <div id="map"></div>
     </div>
 
 
-<link rel="stylesheet" type="text/css" href="styles.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
     <script src="map.js"></script>
-      <script src="knockout.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKdHZJEIORttvrbcgNk2OCqCf8J9-1yX0&v=3&callback=initMap">
+    <script src="knockout.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKdHZJEIORttvrbcgNk2OCqCf8J9-1yX0&v=3&callback=initMap">
     </script>
-  </body>
+</body>
+
 </html>
