@@ -47,7 +47,9 @@ function initMap() {
             zoom: 13,
             mapTypeControl: false
         });
-
+            function clc(){
+              populateInfoWindow(this, Infowindow);
+			}
         var bounds = new google.maps.LatLngBounds();
         var Infowindow = new google.maps.InfoWindow();
         for (var i = 0; i < locations.length; i++) {
@@ -65,13 +67,11 @@ function initMap() {
             //console.log(marker)
             // Push the marker to our array of markers.
             // markers.push(marker);
-
-            locations[i].marker = marker;
-            marker.addListener('click', function() {
-                populateInfoWindow(this, Infowindow);
-            });
+		    locations[i].marker = marker;
+            marker.addListener('click', clc);
 
         }
+			
         map.fitBounds(bounds);
         ko.applyBindings(new ViewModel());
 
@@ -86,4 +86,4 @@ function initMap() {
                 });
             }
         }
-};
+}
