@@ -5,6 +5,7 @@ var ViewModel = function() {
   self.openWindow = function(location) {
     console.log(location)
     google.maps.event.trigger(location.marker,'click');
+      
   }
 
 }
