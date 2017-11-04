@@ -3,6 +3,7 @@ var map;
 var locations = [{
     id: 0,
     title: 'park',
+    address: 'Al-Malaz Area (Al-Ahsa St.) الرياض 12836 المملكة العربية السعودية	',
     location: {
         lat: 24.771113,
         lng: 46.73771
@@ -10,67 +11,40 @@ var locations = [{
 }, {
     id: 1,
     title: 'Water Splash',
+    address: 'King Abdullah Rd (Turki Bin Ahmad Al Sadairi St) الرياض المملكة العربية السعودية	',
     location: {
-        lat: 24.774021,
-        lng: 46.758016
+    lat: 24.774021,
+    lng: 46.758016
     }
 }, {
     id: 2,
     title: 'Granada center mall',
-    location: {
-        lat: 24.7680175,
-        lng: 46.7146045
-    }
-}, {
-    id: 3,
-    title: ' Al Nakheel Mall ',
+    address: 'Eastern Ring Rd. (at Al Imam Saud Ibn Abdul Aziz Branch Rd) الرياض المملكة العربية السعودية',
     location: {
         lat: 24.774501,
         lng: 46.709206
     }
 }, {
+    id: 3,
+    title: ' Al Nakheel Mall ',
+    address: 'Othman Bin Affan Rd (Imam Saud Ibn Abdul Aziz Rd.) الرياض المملكة العربية السعودية',
+    location: {
+     lat: 24.7680175,
+     lng: 46.7146045
+    }   
+}, {
     id: 4,
-    title: 'Water Splash ',
+    title: 'Al Hamra District Walk  ',
+    address: 'Prince Mogrin ibn Abdulaziz St (Eastern Ring Rd) الرياض المملكة العربية السعودية	',
     location: {
         lat: 24.774113,
         lng: 46.738902
-    }
+    },
+        Area: "Almalqa"
 }, ];
 
     
- var markers = [
-    
-    {
-		position: {lat: 24.771113, lng: 46.73771},
-		title: "park",
-		search: "park",
-        Area: "Almalqa"
-	},
-	{
-		position: {lat: 24.774021, lng: 46.758016},
-		title: "Water Splash",
-		search: "Water Splash",
-        Area: "Almalqa"
-	},
-	{
-		position: {lat: 24.7680175, lng: 46.71460457},
-		title: "Granada center mall",
-		search: "Granada center mall",
-        Area: "Almalqa"
-	},
-	{
-		position: {lat: 24.774501, lng: 46.709206},
-		title: "Al Nakheel Mall",
-		search: "Al Nakheel Mall",
-        Area: "Almalqa"
-	},
-	{
-		position: {lat: 24.774113, lng: 46.738902},
-		title: "Water Splash",
-		search: "Water Splash",
-        Area: "Almalqa"
-	}
-];
+ var markers = [];
 
                     
 
@@ -92,12 +66,16 @@ function initMap() {
         for (var i = 0; i < locations.length; i++) {
             var position = locations[i].location;
             var title = locations[i].title;
+            var Area = locations[i].Area;
+            var address = locations[i].address;
             var marker = new google.maps.Marker({
                 position: position,
                 title: title,
                 animation: google.maps.Animation.DROP,
                 id: i,
-                map: map
+                map: map,
+                Area: Area,
+                address: address
             });
 
             bounds.extend(marker.position);
@@ -113,8 +91,16 @@ function initMap() {
         ko.applyBindings(new ViewModel());
 
         function populateInfoWindow(marker, infowindow) {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function() {
+              marker.setAnimation(null);
+            }, 2100)
             if (infowindow.marker != marker) {
-                infowindow.marker = marker;
+                 infowindow.marker = marker;
+               // ADD API REQUEST
+               // setcontent and open infowindow in done or success of 
+               // AJAX request
+              
                 infowindow.setContent('<div>' + marker.title + marker.Area + '</div>');
                
                 infowindow.open(map, marker);
@@ -131,79 +117,3 @@ function initMap() {
             
         }
 
-
-
-
-
-/*
-
-
-
-// arrays to hold copies of the markers and html used by the side_bar 
-// because the function closure trick doesnt work there 
-var gmarkers = [];
-var map = null;
-
-function initialize() {
-    // create the map
-    var myOptions = {
-        zoom: 11,
-        center: new google.maps.LatLng(51.519243, -0.126661),
-        mapTypeControl: true,
-        mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-        },
-        navigationControl: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById("map-canvas-big"),
-    myOptions);
-    google.maps.event.addListener(map, 'click', function () {
-        infowindow.close();
-    });
-    var point = new google.maps.LatLng(51.5608308012934, -0.0540925428914196);
-    var marker = createMarker(point, " Clapton ", "<div class='scrittafumetto' id='proprieta_4940'><strong><div class='titolo'> Title</div></strong><br /><a class='mostra_vedi'>Vedi</a></span></div>");
-    var point2 = new google.maps.LatLng(51.56, -0.05);
-
-    var marker2 = createMarker(point2, " somewhere ", "<div class='scrittafumetto' id='proprieta_4941'><strong><div class='titolo'> Title</div></strong><br /><a class='mostra_mardi'>Mardi</a></span></div>");
-
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-var infowindow = new google.maps.InfoWindow({
-    size: new google.maps.Size(150, 50)
-});
-
-
-function createMarker(latlng, name, html) {
-    var contentString = html;
-    var marker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        icon: 'https://www.google.com/mapfiles/marker.png',
-        zIndex: Math.round(latlng.lat() * -100000) << 5
-    });
-
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(contentString);
-        infowindow.open(map, marker);
-    });
-    // save the info we need to use later for the side_bar
-    gmarkers.push(marker);
-    // add a line to the side_bar html
-    google.maps.event.addListener(marker, 'click', function (marker, i) {
-        for (var i = 0; i < gmarkers.length; i++) {
-            gmarkers[i].setIcon('https://www.google.com/mapfiles/marker.png'); // set back to default
-        }
-        this.setIcon('https://www.google.com/mapfiles/marker_green.png');
-        var marker_id = marker.id;
-
-
-        if ($('#new-overview-main_' + marker_id).css('display') == 'block') {
-            $('#new-overview-main_' + marker_id).css('display', 'none');
-        } else {
-            $('#new-overview-main_' + marker_id).css('display', 'block');
-        }
-
-    });
-
-}*/

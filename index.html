@@ -13,7 +13,8 @@
         <div class="options-box">
             <h1>Find 5 best location</h1>
             <div>
-                <div data-bind="foreach: obsLocations">
+            <input type="text" data-bind="textInput: filterInput" />
+                <div data-bind="foreach: filterLocations">
                     <div type="button" data-bind="text: title, click: $root.openWindow"></div>
                 </div>
 
