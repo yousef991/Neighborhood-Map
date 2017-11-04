@@ -1,8 +1,9 @@
-     html,
+      @media (min-width: 600px) {
+    html,
       body {
         font-family: Arial, sans-serif;
         height: 100%;
-        width: 100;
+        width: 100%;
 
       }
       .container {
@@ -29,7 +30,6 @@
         left: 220px;
         position: absolute;
         right: 0px;
-        z-index: auto;
       }
       .options-box {
         background: #fff;
@@ -42,10 +42,10 @@
         width: 180px;
         margin: 5;
         z-index : inherit;
-        position: absolute;
+        position: fixed;
         top : 10px;
       }
-
+}
  
 .topnav {
   overflow: hidden;

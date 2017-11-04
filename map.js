@@ -3,7 +3,7 @@ var map;
 var locations = [{
     id: 0,
     title: 'park',
-    address: 'Al-Malaz Area (Al-Ahsa St.) الرياض 12836 المملكة العربية السعودية	',
+    address: 'Al-Malaz Area (Al-Ahsa St.)  12836',
     location: {
         lat: 24.771113,
         lng: 46.73771
@@ -11,7 +11,7 @@ var locations = [{
 }, {
     id: 1,
     title: 'Water Splash',
-    address: 'King Abdullah Rd (Turki Bin Ahmad Al Sadairi St) الرياض المملكة العربية السعودية	',
+    address: 'King Abdullah Rd (Turki Bin Ahmad Al Sadairi St)',
     location: {
     lat: 24.774021,
     lng: 46.758016
@@ -19,7 +19,7 @@ var locations = [{
 }, {
     id: 2,
     title: 'Granada center mall',
-    address: 'Eastern Ring Rd. (at Al Imam Saud Ibn Abdul Aziz Branch Rd) الرياض المملكة العربية السعودية',
+    address: 'Eastern Ring Rd. (at Al Imam Saud Ibn Abdul Aziz Branch Rd)',
     location: {
         lat: 24.774501,
         lng: 46.709206
@@ -27,7 +27,7 @@ var locations = [{
 }, {
     id: 3,
     title: ' Al Nakheel Mall ',
-    address: 'Othman Bin Affan Rd (Imam Saud Ibn Abdul Aziz Rd.) الرياض المملكة العربية السعودية',
+    address: 'Othman Bin Affan Rd (Imam Saud Ibn Abdul Aziz Rd.) ',
     location: {
      lat: 24.7680175,
      lng: 46.7146045
@@ -35,7 +35,7 @@ var locations = [{
 }, {
     id: 4,
     title: 'Al Hamra District Walk  ',
-    address: 'Prince Mogrin ibn Abdulaziz St (Eastern Ring Rd) الرياض المملكة العربية السعودية	',
+    address: 'Prince Mogrin ibn Abdulaziz St (Eastern Ring Rd)	',
     location: {
         lat: 24.774113,
         lng: 46.738902

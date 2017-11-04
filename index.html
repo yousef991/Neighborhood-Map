@@ -12,13 +12,11 @@
     <div class="container">
         <div class="options-box">
             <h1>Find 5 best location</h1>
-            <div>
             <input type="text" data-bind="textInput: filterInput" />
                 <div data-bind="foreach: filterLocations">
                     <div type="button" data-bind="text: title, click: $root.openWindow"></div>
                 </div>
 
-            </div>
         </div>
         <div id="map">
         
