@@ -91,7 +91,7 @@ function initMap() {
             marker.setAnimation(google.maps.Animation.BOUNCE);
             setTimeout(function() {
               marker.setAnimation(null);
-            }, 2100)
+            }, 2100);
             if (infowindow.marker != marker) {
                  infowindow.marker = marker;
                // ADD API REQUEST
@@ -111,7 +111,7 @@ $.ajax({
   url: wikiUrl,
   dataType: dt,
   success: function(locations) {
-    console.log(locations)
+    console.log(locations);
       
     // set the info window content
     infowindow.setContent(title + address + locations);
