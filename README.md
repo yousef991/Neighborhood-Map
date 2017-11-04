@@ -24,3 +24,5 @@ Clone or download this repo and simply open the index.html file and enjoy!
 - <a href="https://discussions.udacity.com/">Udacity Discussion Forum </a> <br>
 - <a href="https://stackoverflow.com/">stackoverflow </a> <br>
 - <a href="https://startbootstrap.com/template-overviews/simple-sidebar/">Simple Sidebar</a> <br>
+- <a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax()</a> <br>
+
