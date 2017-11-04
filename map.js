@@ -40,7 +40,6 @@ var locations = [{
         lat: 24.774113,
         lng: 46.738902
     },
-        Area: "Almalqa"
 }, ];
 
     
@@ -66,7 +65,6 @@ function initMap() {
         for (var i = 0; i < locations.length; i++) {
             var position = locations[i].location;
             var title = locations[i].title;
-            var Area = locations[i].Area;
             var address = locations[i].address;
             var marker = new google.maps.Marker({
                 position: position,
@@ -74,7 +72,6 @@ function initMap() {
                 animation: google.maps.Animation.DROP,
                 id: i,
                 map: map,
-                Area: Area,
                 address: address
             });
 
@@ -101,7 +98,7 @@ function initMap() {
                // setcontent and open infowindow in done or success of 
                // AJAX request
               
-                infowindow.setContent('<div>' + marker.title + marker.Area + '</div>');
+                infowindow.setContent('<div>' + marker.title + marker.address + '</div>');
                
                 infowindow.open(map, marker);
                 // Make sure the marker property is cleared if the infowindow is closed.
