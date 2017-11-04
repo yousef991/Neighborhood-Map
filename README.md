@@ -23,3 +23,4 @@ Clone or download this repo and simply open the index.html file and enjoy!
 - <a href="http://knockoutjs.com/index.html">Knockout framework</a> <br>
 - <a href="https://discussions.udacity.com/">Udacity Discussion Forum </a> <br>
 - <a href="https://stackoverflow.com/">stackoverflow </a> <br>
+- <a href="https://startbootstrap.com/template-overviews/simple-sidebar/">Simple Sidebar</a> <br>
