@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,22 +14,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <!-- Custom styles for this template -->
     <link href="simple-sidebar.css" rel="stylesheet">
-<!--    <link rel="stylesheet" type="text/css" href="styles.css">-->
 
     <style>
-    html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-#wrapper,
-#page-content-wrapper,
-#map {
-    height: 100%;
-}
-    
+        #wrapper,
+        #page-content-wrapper,
+        #map {
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -41,9 +38,9 @@ body {
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <input type="text" data-bind="textInput: filterInput" />
-                <ul data-bind="foreach: filterLocations">
-                    <li type="button" data-bind="text: title, click: $root.openWindow"></li>
-                </ul>
+            <ul data-bind="foreach: filterLocations">
+                <li type="button" data-bind="text: title, click: $root.openWindow"></li>
+            </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -52,31 +49,31 @@ body {
             <div class="container-fluid">
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
             </div>
-      
-         
-        <div id="map">  </div>
-            
-  </div>
+
+
+            <div id="map"> </div>
+
+        </div>
         <!-- /#page-content-wrapper -->
     </div>
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-<script src="map.js"></script>
-<script src="knockout.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKdHZJEIORttvrbcgNk2OCqCf8J9-1yX0&v=3&callback=initMap" onerror="googleError()">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="map.js"></script>
+    <script src="knockout.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKdHZJEIORttvrbcgNk2OCqCf8J9-1yX0&v=3&callback=initMap" onerror="googleError()">
     </script>
-        
+
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
     </script>
 
 </body>
