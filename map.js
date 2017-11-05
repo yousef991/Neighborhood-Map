@@ -94,7 +94,8 @@ function initMap() {
 				wikiBase = 'https://en.wikipedia.org/w/api.php',
 				wikiUrl = wikiBase + '?action=opensearch&search=' + query + '&format=json&callback=wikiCallback';
 			var wikiRequestTimeout = setTimeout(function() {
-				$wikiElem.text('failed to get Wikipedia resources');
+				wikierrormsg = 'failed to get Wikipedia resources';
+                console.log(wikierrormsg);
 			}, 8000);
 			$.ajax({
 				url: wikiUrl,
