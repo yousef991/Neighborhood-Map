@@ -108,7 +108,11 @@ function initMap() {
 					infowindow.open(map, marker);
 					clearTimeout(wikiRequestTimeout);
 				}
-			});
+			}).fail (function (){
+                alert("an error has occurred");
+                
+            });
+        
 			infowindow.setContent('<div>' + marker.title + marker.address + '</div>');
 			infowindow.open(map, marker);
 			// Make sure the marker property is cleared if the infowindow is closed.
